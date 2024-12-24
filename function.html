@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>JS Function</title>
+  </head>
+  <body>
+    <script>
+      function sayHello() {
+        document.write("Hello Folks!!");
+      }
+
+      sayHello();
+      sayHello();
+
+      function sayHello() {
+        document.write("Hello Folks! <br>");
+      }
+
+      sayHello();
+
+      function sayHelloWithParams(firstName, lastName = "Doe") {
+        document.write("Hello" + firstName + " " + lastName + "!<br>");
+      }
+      sayHelloWithParams("john");
+      sayHelloWithParams("john, smith");
+
+      let hello = function (name) {
+        document.write(`Hello ${name} </br>`);
+      };
+      hello("Andre");
+
+      function outerFunction(outerVariable) {
+        function innerFunction(innerVariable) {
+          document.write("Outer Variable: " + outerVariable);
+          document.write("Inner Variable: " + innerVariable);
+        }
+
+        innerFunction("Inner");
+      }
+      outerFunction("Outer");
+      innerFunction("Inner");
+
+      const greet = (name) => {
+        document.write("Hello, " + name + "!");
+      };
+      greet("Charlie");
+
+      function outerFunction(outerVariable) {
+        return function innerFunction(innerVariable) {
+          document.write("Outer Variable: " + outerVariable);
+          document.write("Inner Variable: " + innerVariable);
+        };
+      }
+      const newFunction = outerFunction("Outer");
+      newFunction("Inner");
+      newFunction("Outer");
+    </script>
+  </body>
+</html>

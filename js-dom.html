@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contoh DOM</title>
+  </head>
+  <body>
+    <h1 id="header">Hello World!</h1>
+    <h2 flag="judul">Ini Sub Judul</h2>
+    <h2 flag="judul">Ini Sub Judul</h2>
+    <button onclick="PencetDisini()">Pencet Disini</button>
+    <script>
+      let button = document.querySelector("button");
+      button.addEventListener("click", function () {
+        alert("Button Clicked");
+      });
+
+      function PencetDisini() {
+        // document.getElementById("header").innerHTML = "Belajar JavaScript!";
+
+        //let header = document.getElementById("header");
+        //header.innerHTML = header.nodeType;
+
+        //let element = document.createElement("h2");
+        //element.innerHTML = "Ini Element Baru";
+        //document.body.appendChild(element);
+
+        let elementTag = document.getElementsByTagName("h2");
+        elementTag[0].innerHtml = "Ini Sub Judul Baru";
+        elementTag[1].innerHTML = "Ini Sub Judul Baru";
+
+        let header = document.getElementById("header");
+        const valueFlag = header.getAttribute("flag");
+        header.innerHTML = valueFlag;
+      }
+    </script>
+  </body>
+</html>
